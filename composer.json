@@ -1,0 +1,21 @@
+{
+    "name": "lej/lej-ddd",
+    "require": {
+        "php": "^7.0",
+        "beberlei/assert": "^2.7",
+        "ramsey/uuid": "^3.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lej\\": "src/Lej"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lej\\Tests\\": "tests/Lej"
+        }
+    }
+}
