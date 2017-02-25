@@ -43,7 +43,7 @@ class UuidIdTest extends TestCase
     public function testIsEqualReturnsFalseIfIdsDoNotMatch()
     {
         $one = new ProperUuidId(Uuid::fromString('123e4567-e89b-12d3-a456-426655440000'));
-        $other = new FakeUuidId(Uuid::fromString('123e4567-e89b-12d3-a456-426655440001'));
+        $other = new FakeUuidId(Uuid::fromString('123e4567-e89b-12d3-a456-426655440002'));
 
         $this->assertFalse($one->isEqual($other));
     }
