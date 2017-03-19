@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Lej\Tests\Component\Domain\Model;
+namespace Lej\Tests\Component\Infrastructure\Serialization;
 
 use JMS\Serializer\JsonSerializationVisitor;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use Lej\Component\Domain\Model\IdSubscribingHandler;
+use Lej\Component\Infrastructure\Serialization\IdSubscribingHandler;
+use Lej\Tests\Component\Domain\Model\ProperStringId;
 use PHPUnit\Framework\TestCase;
 
 class IdSubscribingHandlerTest extends TestCase

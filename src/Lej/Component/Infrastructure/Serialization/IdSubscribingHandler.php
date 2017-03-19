@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Lej\Component\Domain\Model;
+namespace Lej\Component\Infrastructure\Serialization;
 
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\VisitorInterface;
+use Lej\Component\Domain\Model\Id;
 
-class StatusSubscribingHandler implements SubscribingHandlerInterface
+class IdSubscribingHandler implements SubscribingHandlerInterface
 {
     /**
      * {@inheritdoc}
@@ -20,10 +21,10 @@ class StatusSubscribingHandler implements SubscribingHandlerInterface
 
         foreach ($formats as $format) {
             $methods[] = [
-                'type' => 'Status',
+                'type' => 'Id',
                 'format' => $format,
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-                'method' => 'serializeStatus',
+                'method' => 'serializeId',
             ];
         }
 
@@ -32,11 +33,11 @@ class StatusSubscribingHandler implements SubscribingHandlerInterface
 
     /**
      * @param VisitorInterface $visitor
-     * @param Status $status
+     * @param Id $id
      * @return string
      */
-    public function serializeStatus(VisitorInterface $visitor, Status $status)
+    public function serializeId(VisitorInterface $visitor, Id $id)
     {
-        return $status->toString();
+        return $id->toString();
     }
 }
