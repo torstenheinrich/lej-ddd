@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Lej\Component\Domain\Model\ValueObject;
+
+class {{ objectClassName }} implements ValueObject
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(ValueObject $object) : bool
+    {
+        return $object instanceof {{ objectClassName }};
+    }
+}

@@ -1,0 +1,43 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Lej\Component\Domain\Model\Entity;
+
+class {{ entityClassName }} implements Entity
+{
+    /**
+     * @var {{ entityClassName }}
+     */
+    private $id;
+
+    /**
+     * The constructor.
+     * @param {{ idClassName }} $id
+     */
+    public function __construct(
+        {{ idClassName }} $id
+    ) {
+        $this->id = $id;
+    }
+
+    /**
+     * Returns the identity.
+     * @return {{ idClassName }}
+     */
+    public function id() : {{ idClassName }}
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(Entity $entity) : bool
+    {
+        return $entity instanceof {{ entityClassName }}
+            && $entity->id()->equals($this->id());
+    }
+}

@@ -11,5 +11,5 @@ interface Entity
      * @param Entity $entity
      * @return bool
      */
-    public function isEqual(Entity $entity): bool;
+    public function equals(Entity $entity) : bool;
 }

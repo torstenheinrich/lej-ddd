@@ -7,8 +7,8 @@ namespace Lej\Component\Domain\Model;
 interface Id extends ValueObject
 {
     /**
-     * Returns the string representation of the identifier.
+     * Returns the string representation of the identity.
      * @return string
      */
-    public function toString(): string;
+    public function toString() : string;
 }

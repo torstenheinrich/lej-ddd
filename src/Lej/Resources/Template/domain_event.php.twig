@@ -1,0 +1,33 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Lej\Component\Domain\Model\DomainEvent;
+
+class {{ eventClassName }} implements DomainEvent
+{
+    /**
+     * @var \DateTimeImmutable
+     */
+    private $occurredOn;
+
+    /**
+     * The constructor.
+     * @param \DateTimeImmutable $occurredOn
+     */
+    public function __construct(
+        \DateTimeImmutable $occurredOn
+    ) {
+        $this->occurredOn = $occurredOn;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function occurredOn() : \DateTimeImmutable
+    {
+        return $this->occurredOn;
+    }
+}

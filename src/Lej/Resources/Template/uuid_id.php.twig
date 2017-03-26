@@ -1,0 +1,54 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Lej\Component\Domain\Model\Id;
+use Lej\Component\Domain\Model\ValueObject;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
+
+class {{ idClassName }} implements Id
+{
+    /**
+     * @var UuidInterface
+     */
+    protected $id;
+
+    /**
+     * The constructor.
+     * @param UuidInterface $id
+     */
+    public function __construct(UuidInterface $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * Constructs the identity from it's string representation.
+     * @param string $id
+     * @return {{ idClassName }}
+     */
+    public static function fromString(string $id) : {{ idClassName }}
+    {
+        return new {{ idClassName }}(Uuid::fromString($id));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toString() : string
+    {
+        return $this->id->toString();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(ValueObject $id) : bool
+    {
+        return $id instanceof {{ idClassName }}
+            && $id->toString() === $this->toString();
+    }
+}

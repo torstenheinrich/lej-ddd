@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Lej\Command\CreateDomainEventCommand;
+use Lej\Command\CreateEntityCommand;
+use Lej\Command\CreateStringIdCommand;
+use Lej\Command\CreateUuidIdCommand;
+use Lej\Command\CreateValueObjectCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new CreateDomainEventCommand());
+$application->add(new CreateEntityCommand());
+$application->add(new CreateStringIdCommand());
+$application->add(new CreateUuidIdCommand());
+$application->add(new CreateValueObjectCommand());
+$application->run();

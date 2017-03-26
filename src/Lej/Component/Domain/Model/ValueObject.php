@@ -11,5 +11,5 @@ interface ValueObject
      * @param ValueObject $object
      * @return bool
      */
-    public function isEqual(ValueObject $object): bool;
+    public function equals(ValueObject $object) : bool;
 }

@@ -7,7 +7,6 @@ namespace Lej\Tests\Component\Infrastructure\Serialization;
 use JMS\Serializer\JsonSerializationVisitor;
 use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use Lej\Component\Infrastructure\Serialization\IdSubscribingHandler;
-use Lej\Tests\Component\Domain\Model\ProperStringId;
 use PHPUnit\Framework\TestCase;
 
 class IdSubscribingHandlerTest extends TestCase
@@ -17,6 +16,6 @@ class IdSubscribingHandlerTest extends TestCase
         $handler = new IdSubscribingHandler();
         $visitor = new JsonSerializationVisitor(new IdenticalPropertyNamingStrategy());
 
-        $this->assertEquals('abc', $handler->serializeId($visitor, new ProperStringId('abc')));
+        $this->assertEquals('abc', $handler->serializeId($visitor, new OrderId('abc')));
     }
 }
