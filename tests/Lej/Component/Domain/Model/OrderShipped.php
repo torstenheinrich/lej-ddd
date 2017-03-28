@@ -17,9 +17,8 @@ class OrderShipped implements DomainEvent
      * The constructor.
      * @param \DateTimeImmutable $occurredOn
      */
-    public function __construct(
-        \DateTimeImmutable $occurredOn
-    ) {
+    public function __construct(\DateTimeImmutable $occurredOn)
+    {
         $this->occurredOn = $occurredOn;
     }
 

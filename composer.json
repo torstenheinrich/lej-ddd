@@ -1,5 +1,6 @@
 {
     "name": "lej/lej-ddd",
+    "license": "MIT",
     "require": {
         "php": "^7.1",
         "beberlei/assert": "^2.7",
